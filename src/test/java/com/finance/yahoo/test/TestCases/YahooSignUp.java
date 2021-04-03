@@ -25,15 +25,19 @@ public class YahooSignUp extends TestUtil {
         SignInPage signInPage = homePage.login();
         SignUpPage signUpPage = signInPage.createButton();
         signUpPage.inPutData(firstName, lastName, email, password, phone , monthBirth, dayBirth, yearBirth);
-      /*  signUpPage.errorMessages();
+        signUpPage.errorEmail();
+        signUpPage.wrongPasswordText();
+        signUpPage.wrongPhoneText();
+        signUpPage.wrongBirthDay();
+
 
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(signUpPage.errorMessages(), "This email address is not available for sign up, try something else");
-        softAssert.assertEquals(signUpPage.errorMessages(), "Your password isn’t strong enough, try making it longer.");
-        softAssert.assertEquals(signUpPage.errorMessages(), "That doesn’t look right, please re-enter your phone number.");
-        softAssert.assertEquals(signUpPage.errorMessages(), "That doesn’t look right, please re-enter your birthday.");
+        softAssert.assertEquals(signUpPage.errorEmail(), "This email address is not available for sign up, try something else");
+        softAssert.assertEquals(signUpPage.wrongPasswordText(), "Your password isn’t strong enough, try making it longer.");
+        softAssert.assertEquals(signUpPage.wrongPhoneText(), "That doesn’t look right, please re-enter your phone number.");
+        softAssert.assertEquals(signUpPage.wrongBirthDay(), "That doesn’t look right, please re-enter your birthday.");
 
-        softAssert.assertAll();*/
+        softAssert.assertAll();
 
     }
 

@@ -63,16 +63,22 @@ public class SignUpPage extends BasePage {
 
     }
 
-    /*public String errorMessages() {
-         errorEmailAddress.getText();
-         errorPassword.getText();
-         errorPhone.getText();
-         errorBirthDay.getText();
-
-         return errorMessages();*/
-
-
+    public String errorEmail() {
+        return errorEmailAddress.getText();
     }
+    public String wrongPasswordText(){
+        return errorPassword.getText();
+    }
+    public String wrongPhoneText(){
+        return errorPhone.getText();
+    }
+    public String wrongBirthDay(){
+        return errorBirthDay.getText();
+    }
+
+
+}
+
 
 
 
