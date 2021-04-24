@@ -3,6 +3,7 @@ package com.finance.yahoo.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
@@ -33,6 +34,9 @@ public class SignUpPage extends BasePage {
     @FindBy(id = "usernamereg-year")
     private WebElement yearOfBirth;
 
+    @FindBy(id = "usernamereg-freeformGender")
+    private WebElement genderField;
+
     @FindBy(id = "reg-submit-button")
     private WebElement registrationButton;
 
@@ -52,63 +56,58 @@ public class SignUpPage extends BasePage {
         super(driver);
     }
 
-    public void setFirstName(String firstNameField){
-       firstName.sendKeys(firstNameField);
+    public void setFirstName(String firstNameField) {
+        firstName.sendKeys(firstNameField);
     }
+
     public void setLastName(String lastNameField) {
         lastName.sendKeys(lastNameField);
     }
+
     public void setEmail(String emailAddressField) {
         emailAddress.sendKeys(emailAddressField);
     }
+
     public void setPassword(String passwordField) {
         password.sendKeys(passwordField);
     }
+
     public void setPhone(String phoneField) {
         mobilePhoneNumber.sendKeys(phoneField);
     }
+
     public void setBirthData(String monthBirthField, String dayBirthField, String yearBirthField) {
+
         Select list = new Select(birthMonth);
         list.selectByValue(monthBirthField);
         dayOfBirth.sendKeys(dayBirthField);
         yearOfBirth.sendKeys(yearBirthField);
-        //registrationButton.click();
-    }
-    public void clickRegistration(){
-        registrationButton.click();
+        genderField.click();
+
     }
 
 
-    /*public void inPutData(String firstNameField, String lastNameField, String emailAddressField, String passwordField, String phoneNumberField, String monthOfBirthField, String dayOfBirthField, String yearOfBirthField) {
-        firstName.sendKeys(firstNameField);
-        lastName.sendKeys(lastNameField);
-        emailAddress.sendKeys(emailAddressField);
-        password.sendKeys(passwordField);
-        mobilePhoneNumber.sendKeys(phoneNumberField);
-        Select list = new Select(birthMonth);
-        list.selectByValue(monthOfBirthField);
-        dayOfBirth.sendKeys(dayOfBirthField);
-        yearOfBirth.sendKeys(yearOfBirthField);
-        registrationButton.click();
-    }*/
-
-
-        public String getEmailValidationMessage () {
-            return errorEmailAddress.getText();
-        }
-
-        public String getPasswordValidationMessage () {
-            return errorPassword.getText();
-        }
-
-        public String getPhoneValidationMessage(){
-            return errorPhone.getText();
-        }
-
-        public String getBirthDayValidationMessage () {
-            return errorBirthDay.getText();
-        }
+    public String getEmailValidationMessage() {
+        return errorEmailAddress.getText();
     }
+
+    public String getPasswordValidationMessage() {
+        return errorPassword.getText();
+    }
+
+    public String getPhoneValidationMessage() {
+        executeOperationWithExplicitWait(3, ExpectedConditions.visibilityOf(errorPhone), 2);
+        return errorPhone.getText();
+    }
+
+    public String getBirthDayValidationMessage() {
+        executeOperationWithExplicitWait(3, ExpectedConditions.visibilityOf(errorBirthDay), 2);
+        return errorBirthDay.getText();
+    }
+
+
+}
+
 
 
 

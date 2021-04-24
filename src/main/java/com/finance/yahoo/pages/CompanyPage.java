@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class CompanyPage extends BasePage{
+public class CompanyPage extends BasePage {
 
     @FindBy(xpath = "//span[text()='Forward Dividend & Yield']/../following-sibling::td")
     private WebElement dividendYield;
@@ -19,13 +19,16 @@ public class CompanyPage extends BasePage{
     public CompanyPage(WebDriver driver) {
         super(driver);
     }
-    public String getDividendYield (){
+
+    public String getDividendYield() {
         return dividendYield.getText();
     }
-    public void clickStatistic(){
+
+    public void clickStatistic() {
         statisticsTab.click();
     }
-    public String getPriceBook(){
+
+    public String getPriceBook() {
         return priceBook.getText();
     }
 

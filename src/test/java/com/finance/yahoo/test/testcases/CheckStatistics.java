@@ -14,13 +14,13 @@ import java.io.IOException;
 
 public class CheckStatistics extends TestUtil {
     @DataProvider(name = "companies-Data")
-    public static Object[][] dataProviderFromCsv() throws IOException, CsvException{
+    public static Object[][] dataProviderFromCsv() throws IOException, CsvException {
         return CsvReader.readCsvFile("src/test/resources/companies-data.csv");
     }
 
     @Test(dataProvider = "companies-Data")
     public void executeTest(String companyName, String dividendRate, String priceBook) {
-        NewHomePage newHomePage =new NewHomePage(driver);
+        NewHomePage newHomePage = new NewHomePage(driver);
         newHomePage.acceptTermsAndConditions();
         CompanyPage companyPage = newHomePage.typeCompanyName(companyName);
         companyPage.clickStatistic();
@@ -29,8 +29,6 @@ public class CheckStatistics extends TestUtil {
         softAssert.assertEquals(companyPage.getDividendYield(), dividendRate);
         softAssert.assertEquals(companyPage.getPriceBook(), priceBook);
         softAssert.assertAll();
-
-
 
 
     }

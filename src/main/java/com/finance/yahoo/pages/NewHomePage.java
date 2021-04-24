@@ -11,7 +11,7 @@ public class NewHomePage extends BasePage {
     @FindBy(id = "yfin-usr-qry")
     private WebElement searchField;
 
-    @FindBy(xpath = "//li[@id='result-quotes-0']")
+    @FindBy(xpath = "////li[@title = 'Amazon.com, Inc.'][1]")
     private WebElement amazonPage;
 
     @FindBy(xpath = "//li[@title='Apple Inc.'][1]")
@@ -24,17 +24,17 @@ public class NewHomePage extends BasePage {
         super(driver);
     }
 
-    public void acceptTermsAndConditions(){
+    public void acceptTermsAndConditions() {
         agreement.click();
     }
 
-    public CompanyPage typeCompanyName(String companyNameType){
+    public CompanyPage typeCompanyName(String companyNameType) {
         searchField.sendKeys(companyNameType);
 
         if (companyNameType == "Apple") {
 
             applePage.click();
-        }else {
+        } else {
             amazonPage.click();
         }
 
