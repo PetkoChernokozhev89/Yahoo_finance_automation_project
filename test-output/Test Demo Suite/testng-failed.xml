@@ -3,13 +3,13 @@
 <suite thread-count="2" parallel="classes" name="Failed suite [Test Demo Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="2" parallel="classes" name="Selenium Course Suite tests(failed)">
     <classes>
-      <class name="com.finance.yahoo.test.testcases.YahooSignUp">
+      <class name="com.finance.yahoo.test.testcases.CheckStatistics">
         <methods>
           <include name="tearDown"/>
-          <include name="setUp"/>
           <include name="executeTest" invocation-numbers="0 1"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- com.finance.yahoo.test.testcases.YahooSignUp -->
+      </class> <!-- com.finance.yahoo.test.testcases.CheckStatistics -->
     </classes>
   </test> <!-- Selenium Course Suite tests(failed) -->
 </suite> <!-- Failed suite [Test Demo Suite] -->
