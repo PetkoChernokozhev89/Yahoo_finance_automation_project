@@ -88,10 +88,12 @@ public class SignUpPage extends BasePage {
 
 
     public String getEmailValidationMessage() {
+        executeOperationWithExplicitWait(3, ExpectedConditions.visibilityOf(errorEmailAddress), 2);
         return errorEmailAddress.getText();
     }
 
     public String getPasswordValidationMessage() {
+        executeOperationWithExplicitWait(3, ExpectedConditions.visibilityOf(errorPassword), 2);
         return errorPassword.getText();
     }
 

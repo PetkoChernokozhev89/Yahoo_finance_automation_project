@@ -3,6 +3,7 @@ package com.finance.yahoo.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class NewHomePage extends BasePage {
     @FindBy(name = "agree")
@@ -28,6 +29,8 @@ public class NewHomePage extends BasePage {
     }
 
     public CompanyPage typeCompanyName(String companyNameType){
+
+
         searchField.sendKeys(companyNameType);
 
         if (companyNameType == "Apple") {

@@ -6,7 +6,7 @@
       <class name="com.finance.yahoo.test.testcases.CheckStatistics">
         <methods>
           <include name="tearDown"/>
-          <include name="executeTest" invocation-numbers="0 1"/>
+          <include name="executeTest" invocation-numbers="0"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.finance.yahoo.test.testcases.CheckStatistics -->
